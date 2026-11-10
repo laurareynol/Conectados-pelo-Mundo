@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokens do sistema visual — valores em RGB para permitir opacidade no Tailwind */
+@layer base {
+  :root {
+    --bg: 247 246 242;
+    --surface: 255 255 255;
+    --surface-2: 240 239 233;
+    --border: 224 221 212;
+    --fg: 21 29 41;
+    --muted: 84 94 108;
+    --primary: 14 94 99;
+    --primary-fg: 255 255 255;
+    --primary-soft: 222 238 236;
+    --accent: 190 84 54;
+    --accent-fg: 255 255 255;
+    --accent-soft: 250 232 223;
+    --sky: 56 88 165;
+    --sky-soft: 226 233 248;
+    --success: 21 122 74;
+    --success-soft: 222 243 232;
+    --warning: 146 88 6;
+    --warning-soft: 252 241 214;
+    --danger: 184 38 48;
+    --danger-soft: 252 226 227;
+    color-scheme: light;
+  }
+
+  .dark {
+    --bg: 13 18 25;
+    --surface: 20 27 36;
+    --surface-2: 29 37 48;
+    --border: 45 55 69;
+    --fg: 232 235 239;
+    --muted: 156 166 180;
+    --primary: 98 199 192;
+    --primary-fg: 6 30 32;
+    --primary-soft: 20 54 56;
+    --accent: 241 148 116;
+    --accent-fg: 42 16 8;
+    --accent-soft: 68 34 25;
+    --sky: 145 172 236;
+    --sky-soft: 31 41 68;
+    --success: 96 204 146;
+    --success-soft: 19 50 36;
+    --warning: 236 184 86;
+    --warning-soft: 58 44 14;
+    --danger: 246 126 131;
+    --danger-soft: 68 24 29;
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    letter-spacing: -0.01em;
+    word-spacing: 0.06em;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--primary));
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: rgb(var(--primary) / 0.2);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-fg;
+  }
+  .prose-cpm p { @apply leading-relaxed text-muted; }
+  .prose-cpm p + p { @apply mt-3; }
+  .scrollbar-thin { scrollbar-width: thin; }
+}
