@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fmoradia\u002F[id]","\u002Fpessoas\u002F[id]","\u002Ftrabalho\u002F[id]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
