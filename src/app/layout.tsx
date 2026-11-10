@@ -13,7 +13,7 @@ import { themeScript } from "@/components/layout/ThemeProvider";
 export const metadata: Metadata = {
   title: { default: "Conectados pelo Mundo", template: "%s · Conectados pelo Mundo" },
   description: "Planejamento, trabalho remoto, moradia e comunidade para a sua primeira jornada como nômade digital.",
-  icons: { icon: "/icon.svg" },
+  icons: { icon: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icon.svg` },
 };
 
 export const viewport: Viewport = {
